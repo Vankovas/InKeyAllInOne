@@ -1,0 +1,41 @@
+@import './variables';
+
+.form-control-input-primary {
+    font-family: inherit;
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    background-color: rgba($color: $color-gray-light-1, $alpha: .2);
+    border: 1px solid $color-gray-dark-1;
+    border-radius: .3rem;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#000, .1);
+      border-bottom: 2px solid $color-secondary;
+    }
+}
+
+.btn-secondary {
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  border-radius: .5rem;
+  background-color: transparent;
+  border: 1px solid $color-secondary;
+  color: $color-secondary; 
+  transition: all .2s;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: $color-white;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.margin-bottom-2rem {
+  margin-bottom: 2rem;
+}

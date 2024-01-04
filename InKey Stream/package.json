@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-stream-try",
+  "version": "0.0.0",
+  "description": "Proep node.js socket.io audio stream",
+  "main": "server.js",
+  "author": "",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7",
+    "multer": "^1.4.2",
+    "socket.io": "^2.3.0",
+    "socket.io-stream": "^0.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.fhict.nl/I397569/inkeystream.git"
+  },
+  "license": "ISC"
+}

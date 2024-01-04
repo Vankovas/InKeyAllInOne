@@ -1,0 +1,15 @@
+stages:
+  - deploy
+  # - build
+  # - test
+  
+heroku:
+ stage: deploy
+ only:
+ - master
+ script:
+ - git remote set-url origin https://gitlab-ci-token:GITLAB_TOKEN@git.fhict.nl/I391915/inkeybackend.git
+ - git checkout origin/master
+ - git remote set-url heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/inkey-backend.git
+ - git pull --rebase heroku master
+ - git push heroku HEAD:master

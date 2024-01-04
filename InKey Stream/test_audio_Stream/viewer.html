@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>View test</title>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <button onclick="listen(true)">start listening</button>
+        <button onclick="listen(false)">stop listening</button>
+        <script> 
+        let socket = io();
+        socket.emit('enter', "1");
+
+        function listen(isListening){
+            if(isListening){
+                // When the client receives a stream message it will play the sound
+                socket.on('stream', function(arrayBuffer) {
+                    let blob = new Blob([arrayBuffer], { 'type' : 'audio/ogg; codecs=opus' });
+                    let audio = document.createElement('audio');
+                    audio.src = window.URL.createObjectURL(blob);
+                    audio.play();
+                });
+            }else{
+                socket.on('stream', function(arrayBuffer) {});
+            }
+        }
+
+        
+        </script>
+    </body>
+</html>    
